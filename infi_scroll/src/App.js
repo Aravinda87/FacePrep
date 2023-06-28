@@ -1,16 +1,22 @@
-import logo from './logo.svg';
 import axios from "axios";
-import InfiniteScroll from "react-infinite-scroll-component";
 import './App.css';
-import React from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import {useEffect, useState } from 'react';
 import Home from './Home';
 import Login from "./Login";
 
+
 const App = () => {
 
   return (
-     <Home></Home>
+    
+    <Router>
+       <Routes>
+       <Route path="/" element={<Login/>}/>
+     <Route path="/home" element={<Home/>}/>
+     </Routes>
+     </Router>
   );
 };
 
